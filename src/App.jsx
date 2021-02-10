@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Top from './pages/Top'
 import Search from './pages/Search'
 import Watch from './pages/Watch'
+import { Reset } from 'styled-reset';
 
 function App() {
   return (
     <Router>
+      <Reset />
       <Switch>
         <Route exact path="/" component={Top} />
         <Route exact path="/search" component={Search} />

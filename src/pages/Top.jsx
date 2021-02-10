@@ -1,12 +1,14 @@
-import React from 'react'
-import Layout from '../components/Layout/Layout'
+import React, {useEffect} from 'react';
+import Layout from '../components/Layout/Layout';
+import { fetchPopularData } from '../apis/index';
 
 const Top = () => {
-  return (
-    <Layout>
-      top page
-    </Layout>
-  )
-}
+  useEffect(() => {
+    fetchPopularData().then((res) => {
+      console.log('data', res)
+    })
+  }, [])
+  return <Layout>top page</Layout>;
+};
 
-export default Top
+export default Top;

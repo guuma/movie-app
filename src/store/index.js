@@ -4,14 +4,17 @@ import { Switch } from 'react-router-dom';
 const initialState = {
   popular: [],
   selected: {},
+  related: [],
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
     case 'SET_POPULAR':
       return { ...state, popular: action.payload.popular };
+    case 'SET_RELATED':
+      return { ...state, related: action.payload.related };
     case 'SET_SELECTED':
-      return { ...state, selected: action.payload.selected}
+      return { ...state, selected: action.payload.selected };
     default:
       return state;
   }

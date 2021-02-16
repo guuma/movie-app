@@ -21,12 +21,14 @@ const SideList = () => {
         globalState.related.map((video) => {
           console.log(video);
           return (
-            <SideListItem
-              id={video.id.videoId}
-              key={video.id.videoId}
-              // src={video.snippet.thumbnails.medium.url}
-              // title={video.snippet.title}
-            />
+            video.snippet && (
+              <SideListItem
+                id={video.id.videoId}
+                key={video.id.videoId}
+                src={video.snippet.thumbnails.medium.url}
+                title={video.snippet.title}
+              />
+            )
           );
         })
       ) : (

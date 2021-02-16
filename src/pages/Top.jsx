@@ -24,12 +24,14 @@ const Top = () => {
         {globalState.popular &&
           globalState.popular.map((popular) => {
             return (
-              <VideoGridItem
-                id={popular.id}
-                key={popular.id}
-                src={popular.snippet.thumbnails.standard.url}
-                title={popular.snippet.title}
-              />
+              popular.snippet.thumbnails.standard && (
+                <VideoGridItem
+                  id={popular.id}
+                  key={popular.id}
+                  src={popular.snippet.thumbnails.standard.url}
+                  title={popular.snippet.title}
+                />
+              )
             );
           })}
       </VideoGrid>
